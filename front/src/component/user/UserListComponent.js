@@ -54,6 +54,7 @@ class UserListComponent extends Component{
 
     addUser = () => {
         window.localStorage.removeItem("userID");
+        // route를 통해 /add-user로 이동. 이후 AddUserComponent.js파일을 보여준다.
         this.props.history.push('/add-user');
     }
 
