@@ -75,14 +75,14 @@ class AddUserComponent extends Component{
                         value={this.state.lastName} onChange={this.onChange}/>
                     </div>
                     <div>
-                        <label>:</label>
+                        <label>Age:</label>
                         <input type="number" placeholder="input your age" name="age"
                         value={this.state.age} onChange={this.onChange}/>
                     </div>
                     <div>
-                        <label>:</label>
+                        <label>Salary:</label>
                         <input type="number" placeholder="input your salary" name="salary"
-                        value={this.state.saveUser} onChange={this.onChange}/>
+                        value={this.state.salary} onChange={this.onChange}/>
                     </div>
 
                     {/* 버튼을 누를 시 API통신으로 DB에 저장 */}
