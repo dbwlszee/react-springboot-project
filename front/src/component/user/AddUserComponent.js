@@ -1,5 +1,6 @@
 // UserListComponent.js에서 Add User 버튼을 눌렀을 때
 import React, {Component} from "react";
+import ApiService from "../../ApiService";
 
 class AddUserComponent extends Component{
     constructor (props){
