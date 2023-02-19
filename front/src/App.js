@@ -1,10 +1,10 @@
 import './App.css';
-import UserListComponent from './component/user/UserListComponent';
+import AppRouter from './component/route/RouterComponent';
 
 function App() {
   return (
     <div className="App">
-      <UserListComponent/>
+      <AppRouter/>
     </div>
   );
 }
