@@ -24,7 +24,7 @@ class UserListComponent extends Component{
                 })
             })
             .catch(err => {
-                console.log('reloadeUser() Error!', err)
+                console.log('reloadeUserList() Error!', err)
             })
     }
 
@@ -66,12 +66,14 @@ class UserListComponent extends Component{
                 <button onClick={this.addUser}>Add User</button>
                 <table>
                     <thead>
-                        <tr>ID</tr>
-                        <tr>FirstName</tr>
-                        <tr>LastName</tr>
-                        <tr>UserName</tr>
-                        <tr>Age</tr>
-                        <tr>Salery</tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>UserName</th>
+                            <th>Age</th>
+                            <th>Salery</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {
