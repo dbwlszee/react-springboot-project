@@ -8,22 +8,15 @@ const AppRouter = () => {
     return(
         <>
             <BrowserRouter>
-            <div style={style}>
                 <Routes>
                     <Route exact path="/" element={<UserListComponent/>}/>
                     <Route path="/users" element={<UserListComponent/>}/>
                     <Route path="/add-users" element={<AddUserComponent/>}/>
                     <Route path="/edit-users" element={<EditUserComponent/>}/>
                 </Routes>
-            </div>
             </BrowserRouter>
         </>
     );
-}
-
-const style = {
-    color: 'red',
-    margin: '10px',
 }
 
 export default AppRouter;
