@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ApiService from "../../ApiService";
+import styles from './UserListComponent.module.css';
 
 class UserListComponent extends Component{
 
@@ -61,8 +62,8 @@ class UserListComponent extends Component{
 
     render() {
         return (
-            <div>
-                <h2>User List</h2>
+            <div className={styles.user}>
+                <h2 className={styles.titleH2}>📃 User List</h2>
                 <button onClick={this.addUser}>Add User</button>
                 <table>
                     <thead>
