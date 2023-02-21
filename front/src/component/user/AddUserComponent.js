@@ -8,7 +8,7 @@ class AddUserComponent extends Component{
         
         // 입력받을 유저의 정보
         this.state = {
-            userName: '',
+            username: '',
             password: '',
             firstName: '',
             lastName: '',
@@ -28,7 +28,7 @@ class AddUserComponent extends Component{
         e.preventDefault(); //새로고침 방지
 
         let user = {
-            userName: this.state.userName,
+            username: this.state.username,
             password: this.state.password,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -39,7 +39,7 @@ class AddUserComponent extends Component{
         ApiService.addUser(user)
         .then ( res => {
             this.setState({
-                message: user.userName + '님이 성공적으로 등록되었습니다.'
+                message: user.username + '님이 성공적으로 등록되었습니다.'
             })
             console.log(this.state.message);
             this.props.history.push('/users');
@@ -57,8 +57,8 @@ class AddUserComponent extends Component{
                     {/* 각 input마다 onChange를 두고 setState로 실시간 state값을 저장 */}
                     <div>
                         <label>User Name:</label>
-                        <input type="text" placeholder="input your username " name="userName"
-                        value={this.state.userName} onChange={this.onChange}/>
+                        <input type="text" placeholder="input your username " name="username"
+                        value={this.state.username} onChange={this.onChange}/>
                     </div>
                     <div>
                         <label>Password:</label>

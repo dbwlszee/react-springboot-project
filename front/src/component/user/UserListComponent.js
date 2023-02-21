@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ApiService from "../../ApiService";
+import styles from './UserListComponent.module.css';
 
 class UserListComponent extends Component{
 
@@ -24,7 +25,7 @@ class UserListComponent extends Component{
                 })
             })
             .catch(err => {
-                console.log('reloadeUserList() Error!', err)
+                console.log('reloadeUserList() Error!', err);
             })
     }
 
@@ -42,7 +43,7 @@ class UserListComponent extends Component{
                 });
             })
             .catch(err => {
-                console.log('deleteUser() Error!', err)
+                console.log('deleteUser() Error!', err);
             })
     }
 
@@ -61,8 +62,8 @@ class UserListComponent extends Component{
 
     render() {
         return (
-            <div>
-                <h2>User List</h2>
+            <div className={styles.user}>
+                <h2 className={styles.titleH2}>📃 User List</h2>
                 <button onClick={this.addUser}>Add User</button>
                 <table>
                     <thead>
@@ -81,7 +82,7 @@ class UserListComponent extends Component{
                                 <tr key={user.id}>
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
-                                    <td>{user.userName}</td>
+                                    <td>{user.username}</td>
                                     <td>{user.age}</td>
                                     <td>{user.salary}</td>
                                     <td>

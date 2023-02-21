@@ -8,7 +8,7 @@ class EditUserComponent extends Component {
         super(props);
 
         this.state = {
-            userName: '',
+            username: '',
             password: '',
             firstName: '',
             lastName: '',
@@ -29,7 +29,7 @@ class EditUserComponent extends Component {
                 let user = res.data;
                 // setState를 통해 정보를 업데이트 후 API통신을 통해 유저정보를 DB에 저장.
                 this.setState({
-                    userName: user.userName,
+                    username: user.username,
                     password: user.password,
                     firstName: user.firstName,
                     lastName: user.lastName,
@@ -53,7 +53,7 @@ class EditUserComponent extends Component {
         e.preventDefault();
 
         let user = {
-            userName: this.state.userName,
+            username: this.state.username,
             password: this.state.password,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -64,7 +64,7 @@ class EditUserComponent extends Component {
         ApiService.editUser(user)
             .then ( res => {
                 this.setState({
-                    message: user.userName + '님의 정보가 성공적으로 수정되었습니다.'
+                    message: user.username + '님의 정보가 성공적으로 수정되었습니다.'
                 })
                 this.props.history.push('/users');
             })
@@ -80,10 +80,10 @@ class EditUserComponent extends Component {
             <form>
                 {/* 각 input마다 onChange를 두고 setState로 실시간 state값을 저장 */}
                 <div>
-                    {/* userName은 readOnly */}
+                    {/* username은 readOnly */}
                     <label>User Name:</label>
-                    <input type="text" readOnly="true" name="userName"
-                    defaultValue={this.state.userName}/>
+                    <input type="text" readOnly="true" name="username"
+                    defaultValue={this.state.username}/>
                 </div>
                 <div>
                     <label>First Name:</label>
