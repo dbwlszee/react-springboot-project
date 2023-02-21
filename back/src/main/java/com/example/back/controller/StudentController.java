@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class StudentController {
@@ -24,7 +25,7 @@ public class StudentController {
         return "New student is added";
     }
 
-    @GetMapping("/getAll")
+    @GetMapping
     public List<Users> listAll(){
         return usersService.listAll();
     }
