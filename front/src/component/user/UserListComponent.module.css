@@ -1,0 +1,65 @@
+.user {
+    margin: 5vw;
+    position: relative;
+}
+
+.titleH2{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 500;
+    margin:0;
+    margin-right: 35px;
+}
+
+table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 2px solid #d5d5d5;
+    padding: 18px;
+}
+
+td {
+    border-bottom: 1px solid #dedede;
+    padding: 10px;
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    position: absolute;
+    margin-top:5px;
+    padding: 0.5rem 1rem;
+
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+
+    display: inline-block;
+    width: auto;
+
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+}
+
+button:active,
+button:hover,
+button:focus {
+  background: #d5d5d5;
+  outline: 0;
+}
+button:disabled {
+  opacity: 0.5;
+}
