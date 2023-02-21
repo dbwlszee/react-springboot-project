@@ -1,9 +1,10 @@
 import './App.css';
+import AppRouter from './component/route/RouterComponent';
 
 function App() {
   return (
     <div className="App">
-      Hello World
+      <AppRouter/>
     </div>
   );
 }
