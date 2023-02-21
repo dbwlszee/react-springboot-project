@@ -25,7 +25,7 @@ class UserListComponent extends Component{
                 })
             })
             .catch(err => {
-                console.log('reloadeUserList() Error!', err)
+                console.log('reloadeUserList() Error!', err);
             })
     }
 
@@ -43,7 +43,7 @@ class UserListComponent extends Component{
                 });
             })
             .catch(err => {
-                console.log('deleteUser() Error!', err)
+                console.log('deleteUser() Error!', err);
             })
     }
 
