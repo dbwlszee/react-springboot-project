@@ -82,7 +82,7 @@ class UserListComponent extends Component{
                                 <tr key={user.id}>
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
-                                    <td>{user.userName}</td>
+                                    <td>{user.username}</td>
                                     <td>{user.age}</td>
                                     <td>{user.salary}</td>
                                     <td>
