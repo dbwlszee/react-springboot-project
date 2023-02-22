@@ -1,8 +1,11 @@
+/* UserListComponent 전체 CSS */
 .user {
     margin: 5vw;
     position: relative;
 }
 
+
+/* TITLE CSS */
 .titleH2{
     display: inline-block;
     font-size: 2rem;
@@ -11,6 +14,8 @@
     margin-right: 35px;
 }
 
+
+/* 표 CSS */
 table {
     margin-top: 30px;
     width: 100%;
@@ -25,6 +30,17 @@ th {
 td {
     border-bottom: 1px solid #dedede;
     padding: 10px;
+    text-align: center;
+}
+
+/* 버튼 CSS */
+.buttonTitle{
+    position: absolute;
+    margin-top:5px;
+}
+
+td>button{
+    margin-left: 5px;
 }
 
 button {
@@ -32,8 +48,6 @@ button {
     -moz-appearance: none;
     appearance: none;
 
-    position: absolute;
-    margin-top:5px;
     padding: 0.5rem 1rem;
 
     font-family: sans-serif;
