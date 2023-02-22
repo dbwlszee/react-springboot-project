@@ -64,7 +64,7 @@ class UserListComponent extends Component{
         return (
             <div className={styles.user}>
                 <h2 className={styles.titleH2}>📃 User List</h2>
-                <button onClick={this.addUser}>Add User</button>
+                <button className={styles.buttonTitle} onClick={this.addUser}>Add User</button>
                 <table>
                     <thead>
                         <tr>
@@ -73,21 +73,23 @@ class UserListComponent extends Component{
                             <th>LastName</th>
                             <th>UserName</th>
                             <th>Age</th>
-                            <th>Salery</th>
+                            <th>Salary</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             this.state.users.map( user=>(
                                 <tr key={user.id}>
+                                    <td>{user.id}</td>
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
                                     <td>{user.username}</td>
                                     <td>{user.age}</td>
                                     <td>{user.salary}</td>
                                     <td>
-                                        <button onClick={()=>this.editUser(user.id)}></button>
-                                        <button onClick={()=>this.deleteUser(user.id)}></button>
+                                        <button onClick={()=>this.editUser(user.id)}>Edit</button>
+                                        <button onClick={()=>this.deleteUser(user.id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))
