@@ -1,6 +1,7 @@
 // UserListComponent.js에서 Add User 버튼을 눌렀을 때
 import React, {Component} from "react";
 import ApiService from "../../ApiService";
+import { withRouter } from "./withRouter";
 
 class AddUserComponent extends Component{
     constructor (props){
@@ -16,6 +17,7 @@ class AddUserComponent extends Component{
             salary: '',
             message: null
         }
+        this.saveUser = this.saveUser.bind(this);
     }
 
     onChange = (e) => {
@@ -42,7 +44,7 @@ class AddUserComponent extends Component{
                 message: user.username + '님이 성공적으로 등록되었습니다.'
             })
             console.log(this.state.message);
-            this.props.history.push('/users');
+            this.props.navigate('/users');
         })
         .catch( err => {
             console.log('saveUser() 에러', err);
@@ -87,11 +89,11 @@ class AddUserComponent extends Component{
                     </div>
 
                     {/* 버튼을 누를 시 API통신으로 DB에 저장 */}
-                    <button onClick={this.saveUser}>Save</button>
+                    <button type="button" onClick={this.saveUser}>Save</button>
                 </form>
             </div>
         )
     }
 }
 
-export default AddUserComponent;
+export default withRouter(AddUserComponent);
