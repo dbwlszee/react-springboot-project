@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // 스프링부트와 연결할 기본 URL 설정
-const USER_API_BASE_URL = "http://localhost:8080/users";
+const USER_API_BASE_URL = "/users";
 
 class ApiService{
     fetchUsers() {
