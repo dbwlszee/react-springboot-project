@@ -13,14 +13,14 @@ import java.util.NoSuchElementException;
 @CrossOrigin
 @RestController
 @RequestMapping("/users")
-public class StudentController {
+public class UsersController {
 
     @Autowired
     private UsersService usersService;
 
     @PostMapping("/add-users")
     public String add(@RequestBody Users users){
-        usersService.saveUsers(users);
+        usersService.save(users);
         return "New student is added";
     }
 
@@ -44,7 +44,7 @@ public class StudentController {
     public ResponseEntity<Users> update(@RequestBody Users users, @PathVariable int id){
         try{
             Users existingUsers = usersService.get(id);
-            usersService.saveUsers(users);
+            usersService.save(users);
             return new ResponseEntity<>(HttpStatus.OK);
         }catch (NoSuchElementException e){
             return new ResponseEntity<Users>(HttpStatus.NOT_FOUND);
