@@ -2,7 +2,6 @@ package com.example.back.controller;
 
 import com.example.back.Service.UsersService;
 import com.example.back.model.Users;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,7 @@ public class StudentController {
     @Autowired
     private UsersService usersService;
 
-    @PostMapping("/add")
+    @PostMapping("/add-users")
     public String add(@RequestBody Users users){
         usersService.saveUsers(users);
         return "New student is added";
