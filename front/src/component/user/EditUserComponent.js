@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from "./withRouter";
 import ApiService from '../../ApiService';
 
 // /edit-user 경로로 이동 시 출력
@@ -8,14 +9,15 @@ class EditUserComponent extends Component {
         super(props);
 
         this.state = {
-            username: '',
-            password: '',
+            id: '',
             firstName: '',
             lastName: '',
             age: '',
             salary: '',
             message: null
         }
+
+        this.saveUser = this.saveUser.bind(this);
     }
 
     componentDidMount(){
@@ -24,17 +26,17 @@ class EditUserComponent extends Component {
 
     loadUser = () => {
         // localStorage에 저장한 "userID"값으로 API통신을 통해 유저정보를 DB에서 불러온다.
-        ApiService.fetchUserByID(window.localStorage.getItem("userID"))
+        ApiService.fetchUsersByID(window.localStorage.getItem("userID"))
             .then( res => {
                 let user = res.data;
                 // setState를 통해 정보를 업데이트 후 API통신을 통해 유저정보를 DB에 저장.
                 this.setState({
+                    id: user.id,
                     username: user.username,
-                    password: user.password,
                     firstName: user.firstName,
                     lastName: user.lastName,
                     age: user.age,
-                    salary: user.salary,
+                    salary: user.salary
                 })
             })
             .catch( err => {
@@ -53,12 +55,12 @@ class EditUserComponent extends Component {
         e.preventDefault();
 
         let user = {
-            username: this.state.username,
+            id: this.state.id,
             password: this.state.password,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             age: this.state.age,
-            salary: this.state.salary,
+            salary: this.state.salary
         }
 
         ApiService.editUser(user)
@@ -66,7 +68,7 @@ class EditUserComponent extends Component {
                 this.setState({
                     message: user.username + '님의 정보가 성공적으로 수정되었습니다.'
                 })
-                this.props.history.push('/users');
+                this.props.navigate('/users');
             })
             .catch( err => {
                 console.log('saveUser() 에러', err);
@@ -82,7 +84,7 @@ class EditUserComponent extends Component {
                 <div>
                     {/* username은 readOnly */}
                     <label>User Name:</label>
-                    <input type="text" readOnly="true" name="username"
+                    <input type="text" readOnly={true} name="username"
                     defaultValue={this.state.username}/>
                 </div>
                 <div>
@@ -103,7 +105,7 @@ class EditUserComponent extends Component {
                 <div>
                     <label>Salary:</label>
                     <input type="number" placeholder="input your salary" name="salary"
-                    value={this.state.saveUser} onChange={this.onChange}/>
+                    value={this.state.salary} onChange={this.onChange}/>
                 </div>
 
                 {/* 버튼을 누를 시 API통신으로 DB에 저장 */}
