@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ApiService from "../../ApiService";
 import styles from './UserListComponent.module.css';
+import { withRouter } from "./withRouter";
 
 class UserListComponent extends Component{
 
@@ -11,6 +12,8 @@ class UserListComponent extends Component{
             users:[],
             message: null
         }
+        this.addUser = this.addUser.bind(this);
+        this.editUser = this.editUser.bind(this);
     }
 
     // 마운트 되면 실행. component에 있는 함수
@@ -51,13 +54,13 @@ class UserListComponent extends Component{
         // 브라우저 로컬스토리지를 사용해 해당 유저의 id를 일시 저장
         window.localStorage.setItem("userID", ID);
         // route를 통해 EditUserComponent.js로 이동.
-        this.props.history.push('/edit-user');
+        this.props.navigate('/edit-users');
     }
 
     addUser = () => {
         window.localStorage.removeItem("userID");
         // route를 통해 /add-user로 이동. 이후 AddUserComponent.js파일을 보여준다.
-        this.props.history.push('/add-user');
+        this.props.navigate('/add-users');
     }
 
     render() {
@@ -101,4 +104,4 @@ class UserListComponent extends Component{
     }
 }
 
-export default UserListComponent;
+export default withRouter(UserListComponent);
