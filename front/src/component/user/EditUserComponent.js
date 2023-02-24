@@ -33,6 +33,7 @@ class EditUserComponent extends Component {
                 this.setState({
                     id: user.id,
                     username: user.username,
+                    password: user.password,
                     firstName: user.firstName,
                     lastName: user.lastName,
                     age: user.age,
@@ -56,6 +57,7 @@ class EditUserComponent extends Component {
 
         let user = {
             id: this.state.id,
+            username: this.state.username,
             password: this.state.password,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -68,6 +70,7 @@ class EditUserComponent extends Component {
                 this.setState({
                     message: user.username + '님의 정보가 성공적으로 수정되었습니다.'
                 })
+                console.log(this.state.message);
                 this.props.navigate('/users');
             })
             .catch( err => {
@@ -116,4 +119,4 @@ class EditUserComponent extends Component {
     }
 }
 
-export default EditUserComponent;
+export default withRouter(EditUserComponent);
