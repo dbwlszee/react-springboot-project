@@ -18,7 +18,7 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
 
-    @PostMapping("/add-users")
+    @PostMapping
     public String add(@RequestBody Users users){
         usersService.save(users);
         return "New student is added";
