@@ -51,32 +51,32 @@ const AddUserComponent = () =>{
                 <div>
                     <label>User Name:</label>
                     <input type="text" placeholder="input your username " name="username"
-                    value={users.username|| ''} onChange={onChange}/>
+                    value={users.username} onChange={onChange}/>
                 </div>
                 <div>
                     <label>Password:</label>
                     <input type="password" placeholder="input your password" name="password"
-                    value={users.password|| ''} onChange={onChange}/>
+                    value={users.password} onChange={onChange}/>
                 </div>
                 <div>
                     <label>First Name:</label>
                     <input type="text" placeholder="input your first name" name="firstName"
-                    value={users.firstName|| ''} onChange={onChange}/>
+                    value={users.firstName} onChange={onChange}/>
                 </div>
                 <div>
                     <label>Last Name:</label>
                     <input type="text" placeholder="input your last name" name="lastName"
-                    value={users.lastName|| ''} onChange={onChange}/>
+                    value={users.lastName} onChange={onChange}/>
                 </div>
                 <div>
                     <label>Age:</label>
                     <input type="number" placeholder="input your age" name="age"
-                    value={users.age|| ''} onChange={onChange}/>
+                    value={users.age} onChange={onChange}/>
                 </div>
                 <div>
                     <label>Salary:</label>
                     <input type="number" placeholder="input your salary" name="salary"
-                    value={users.salary|| ''} onChange={onChange}/>
+                    value={users.salary} onChange={onChange}/>
                 </div>
 
                 {/* 버튼을 누를 시 API통신으로 DB에 저장 */}
