@@ -1,8 +1,8 @@
 import React from "react";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import UserListComponent from '../user/UserListComponent';
-import AddUserComponent from "../user/AddUserComponent";
-import EditUserComponent from "../user/EditUserComponent";
+import UserListComponent from '../user/UserListComponentFunction';
+import AddUserComponent from "../user/AddUserComponentFunction";
+import EditUserComponent from "../user/EditUserComponentFunction";
 
 const AppRouter = () => {
     return(
