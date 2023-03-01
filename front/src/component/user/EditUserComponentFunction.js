@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApiService from '../../ApiService';
+import styles from './Form.module.css';
 
 // /edit-user 경로로 이동 시 출력
 
@@ -75,11 +76,11 @@ const EditUserComponent = () => {
 
 
     return(
-        <div>
-        <h2>Edit User</h2>
-        <form>
+        <div className={styles.all}>
+        <h2 className={styles.infoText}>Edit User</h2>
+        <form className={styles.container}>
             {/* 각 input마다 onChange를 두고 setState로 실시간 state값을 저장 */}
-            <div>
+            <div className={styles.controls}>
                 {/* username은 readOnly */}
                 <label>User Name:</label>
                 <input type="text" readOnly={true} name="username"
@@ -95,19 +96,21 @@ const EditUserComponent = () => {
                 <input type="text" placeholder="input your last name" name="lastName"
                 value={users.lastName} onChange={onChange}/>
             </div>
-            <div>
+            <div className={styles.controls}>
                 <label>Age:</label>
                 <input type="number" placeholder="input your age" name="age"
                 value={users.age} onChange={onChange}/>
             </div>
-            <div>
+            <div className={styles.controls}>
                 <label>Salary:</label>
                 <input type="number" placeholder="input your salary" name="salary"
                 value={users.salary} onChange={onChange}/>
             </div>
 
             {/* 버튼을 누를 시 API통신으로 DB에 저장 */}
-            <button onClick={saveUser}>Save</button>
+            <div>
+                <button className={styles.formBtn} onClick={saveUser}>Save</button>
+            </div>
         </form>
     </div>
     )
