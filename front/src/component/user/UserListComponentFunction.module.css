@@ -40,6 +40,7 @@ td {
 }
 
 td>button{
+    --width: 80px;
     margin-left: 5px;
 }
 
@@ -57,7 +58,7 @@ button {
     text-decoration: none;
 
     display: inline-block;
-    width: auto;
+    width: var(--width, 100px);
 
     border: none;
     border-radius: 4px;
