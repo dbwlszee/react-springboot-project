@@ -1,0 +1,39 @@
+:root {
+    --background-color: rgb(249, 249, 249);
+    --text-color: rgb(54, 54, 54);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px 12px; 
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.home {
+    padding-left: 20px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+}
+
+.menu li{
+    padding: 8px 25px;
+}
