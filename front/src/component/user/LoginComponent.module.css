@@ -1,0 +1,46 @@
+.loginPage {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: var(--background-color);
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 41px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.form h1 {
+    margin: 3px 0 35px;
+}
+
+.form input {
+    font-family: sans-serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 17px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form button {
+    --width: 100%;
+    text-transform: uppercase;
+    background: #5776d6;
+    margin-top: 10px;
+    padding: 13px;
+    color: #FFFFFF;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: #435fb1;
+}
