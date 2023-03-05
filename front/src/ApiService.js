@@ -24,6 +24,9 @@ class ApiService{
         return axios.put(USER_API_BASE_URL+ '/' + user.id, user);
     }
 
+    loginUser(user){
+        return axios.post(USER_API_BASE_URL+ '/login', user);
+    }
 }
 
 export default new ApiService();

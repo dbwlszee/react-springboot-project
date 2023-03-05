@@ -12,6 +12,7 @@ const UserNav = () => {
 
                 <ul className={styles.menu}>
                     <li><a href="/add-users">AddUser</a></li>
+                    <li><a href="/login">Login</a></li>
                 </ul>
             </nav>
         </>
