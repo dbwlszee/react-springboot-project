@@ -25,7 +25,7 @@
     gap: 2.7rem 4rem;
 }
 
-form>div {
+.container div {
     text-align: left;
     position: relative;
 }
@@ -34,7 +34,7 @@ form>div {
     grid-column: 1/ span 2;
 }
 
-input {
+.container input {
     font-size: 14px;
     border: 1px solid #c6c6c6;
     width:100%;
@@ -45,7 +45,7 @@ input {
     color:#878787;
 }
 
-input::placeholder{
+.container input::placeholder{
     position: absolute;
     left: 10px;
     top: 9px;
@@ -54,7 +54,7 @@ input::placeholder{
     font-family: 'Lato', 'sans-serif';
 }
 
-label{
+.container label{
     position: absolute;
     left: -8px;
     top: -35px;
